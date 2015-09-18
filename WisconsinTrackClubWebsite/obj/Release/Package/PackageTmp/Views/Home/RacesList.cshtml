@@ -1,0 +1,143 @@
+﻿@model WisconsinTrackClubWebsite.Models.ViewModels.RaceViewModel
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="hidden-xs hidden-sm hidden-md col-lg-2 sidebar">
+            @Html.Partial("_sideNav", Model.Profile)
+        </div>
+        <div class="col-md-11 col-md-offset-1 col-lg-9 col-lg-offset-2 hidden-xs hidden-sm manager main">
+            <h2>Races</h2>
+            <h4>Upcoming Race Details</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Location
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Races)
+                    {
+                        <tr>
+                           @{
+                        String raceName = @item.RaceName;
+                        <td>
+                            @Html.ActionLink(raceName, "RaceProfile", "Home", new { id = @item.RaceId }, null)
+                        </td>
+                        }
+                            <td>
+                                @item.Date.ToShortDateString()
+                            </td>
+                            <td>
+                                @item.Location
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+        @*<div class="hidden-xs hidden-lg col-sm-1 sidebar">
+                @Html.Partial("_SmallSideViewPartial")
+            </div>*@
+        <div class="hidden-xs hidden-md hidden-lg row">
+            <div class="col-sm-11 col-sm-offset-1 manager_sm main">
+                <h3>Races</h3>
+                <h4>Upcoming Race Details</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Location
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Races)
+                        {
+                            <tr>
+                                
+                                    @{
+                            String raceName = @item.RaceName;
+                            <td>
+                                @Html.ActionLink(raceName, "RaceProfile", "Home", new { id = @item.RaceId }, null)
+                            </td>
+                                }
+                                <td>
+                                    @item.Date.ToShortDateString()
+                                </td>
+                                <td>
+                                    @item.Location
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <div class="hidden-sm hidden-md hidden-lg row">
+            <div class="col-xs-10 col-xs-offset-1 manager_sm main">
+                <h2>Registered Members</h2>
+                <h4>Reach out to other WTC members who have made themselves visible</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                            <th>
+                                Location
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Races)
+                        {
+                            <tr>
+                               @{
+                            String raceName = @item.RaceName;
+                            <td>
+                                @Html.ActionLink(raceName, "RaceProfile", "Home", new { id = @item.RaceId }, null)
+                            </td>
+                            }
+                                <td>
+                                    @item.Date.ToShortDateString()
+                                </td>
+                                <td>
+                                    @item.Location
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+

@@ -1,0 +1,38 @@
+﻿@model WisconsinTrackClubWebsite.Models.Profile
+<ul class="nav nav-sidebar">
+    <li>WTC</li>
+</ul>
+<ul class="nav nav-sidebar">
+    <li>@Html.ActionLink("WTC Feed", "Feed", "Home")</li>
+    @if (Model.Approved)
+    {
+        <li>@Html.ActionLink("Race Registration", "RaceRegistration", "Home")</li>
+    }
+    <li>@Html.ActionLink("WTC Members", "Members", "Home")</li>
+    <li>@Html.ActionLink("WTC Races Details", "RaceDetails", "Home")</li>
+
+</ul>
+<ul class="nav nav-sidebar">
+    <li>Manage</li>
+</ul>
+<ul class="nav nav-sidebar nav-stacked">
+    <li>@Html.ActionLink("My Profile", "Manage", "Account")</li>
+    <li>@Html.ActionLink("My Forms", "MyForms", "Home")</li>
+    <li>@Html.ActionLink("My Races", "MyRaces", "Home")</li>
+</ul>
+@*<ul class="nav nav-sidebar">
+    <li>Tools <small>Beta</small></li>
+</ul>
+<ul class="nav nav-sidebar">
+    <li>@Html.ActionLink("Mile Log", "Index", "UserRunEntries")</li>
+</ul>*@
+@if (User.IsInRole("Admin"))
+{
+    <ul class="nav nav-sidebar">
+        <li>Admin</li>
+    </ul>
+    <ul class="nav nav-sidebar">
+        <li>@Html.ActionLink("Admin Center", "AdminInterface", "Home")</li>
+    </ul>
+}
+

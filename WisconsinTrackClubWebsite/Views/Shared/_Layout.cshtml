@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Wisconsin Track Club</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body style="background-color: @Session["backColor"];">
+    <script type="text/javascript">
+    (function (w, d, t, u, n, s, e) {
+        w['SwiftypeObject'] = n; w[n] = w[n] || function () {
+            (w[n].q = w[n].q || []).push(arguments);
+        }; s = d.createElement(t);
+        e = d.getElementsByTagName(t)[0]; s.async = 1; s.src = u; e.parentNode.insertBefore(s, e);
+    })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+    _st('install', '_LhJqQh2_kFisx1joErr', '2.0.0');
+    </script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '934187166625432',
+                xfbml: true,
+                version: 'v2.2'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    @*<div class=" row">
+        <div class="col-md-3 narrow">
+            <h4>University of Wisconsin - Madison</h4>
+        </div>
+        </div>*@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Wisconsin Track Club", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        @*@Html.ActionLink("About Us", "Index", "Home", new { @class = "dropdown-toggle"})*@
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Who We Are", "About", "Home")</li>
+                            <li>@Html.ActionLink("Bylaws", "Bylaws", "Home")</li>
+                            <li>@Html.ActionLink("Track Club 101", "TC101", "Home")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Officers and Contacts", "OfficersAndContacts", "Home")</li>
+                            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Getting Involved <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Membership", "Membership", "Home")</li>
+                            <li>@Html.ActionLink("Area Runs", "AreaRuns", "Home")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Cross Country", "CrossCountry", "Home")</li>
+                            <li>@Html.ActionLink("Track", "Track", "Home")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Moosletter", "Moosletter", "Home")</li>
+                            <li>@Html.ActionLink("Apparel", "Apparel", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events We Host <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Moovin 5k'", "Moovin", "home")</li>
+                            <li>@Html.ActionLink("Capitol Mile", "CapitolMile", "home")</li>
+                            <li>@Html.ActionLink("Summer Track Series", "SummerTrack", "home")</li>
+                            <li>@Html.ActionLink("Managed Races", "ManagedRaces", "Home")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schedule and Results <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Current Schedule", "CurrentSchedule", "Home")</li>
+                            @*<li>@Html.ActionLink("Past Results", "PastResults", "Home")</li>*@
+                            <li>@Html.ActionLink("Performance", "Performance", "Home")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown hidden-lg">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Manage <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("WTC Feed", "Feed", "Home")</li>
+                            <li>@Html.ActionLink("Race Registration", "RaceRegistration", "Home")</li>
+                            <li>@Html.ActionLink("WTC Races Details", "RaceDetails", "Home")</li>
+                            <li>@Html.ActionLink("My Forms", "MyForms", "Home")</li>
+                            <li>@Html.ActionLink("My Races", "MyRaces", "Home")</li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Admin Center", "AdminInterface", "Home")</li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+ 
+        </div>
+    </div>
+    <div class="container-fluid">
+        @RenderBody()
+        @*<hr style="color:white; width:67%;" />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>
+                    Wisconsin Track Club | Student Activity Center Rm. 3207 | 333 E. Campus Mall | Madison, Wisconsin 53715
+
+                    The Wisconsin Track Club is grateful to be sponsored by the University of Wisconsin Department of Ophthalmology & Visual Sciences
+                </p>
+            </footer>*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Ajax")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

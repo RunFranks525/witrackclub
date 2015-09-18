@@ -1,0 +1,193 @@
+﻿@model WisconsinTrackClubWebsite.Models.ViewModels.RaceProfileViewModel
+@{
+    ViewBag.Title = "RaceProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-lg-12 information">
+            <h2 class="hidden-xs">@Model.Race.RaceName Details</h2>
+            <h3 class="hidden-sm hidden-md hidden-lg">@Model.Race.RaceName Details</h3>
+            @if (Model.RegisteredPeople != null)
+            {
+                <table id="raceProfileTable" class="table table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th class="hidden-xs hidden-sm">Email</th>
+                            <th class="hidden-xs">Phone Number</th>
+                            <th class="hidden-xs">Forms</th>
+                            <th>Car (Cap.)</th>
+                            <th class="hidden-xs">Birthday</th>
+                            <th class="hidden-xs">Age</th>
+                            @if (Model.Race.Date.DayOfWeek.ToString() == "Friday")
+                            {
+                                <th>Departure time</th>
+                            }
+                            <th>Emergency Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int carCapCounter = 0;
+                            int PeopleCounter = 0;
+
+                            foreach (var item in Model.RegisteredPeople)
+                            {
+                                PeopleCounter++;
+                                foreach (var entry in Model.entries)
+                                {
+                                    if (entry.RegisteredPerson.Id == item.Id)
+                                    {
+                                        <tr>
+                                            @{
+                                        String name = item.FirstName + " " + item.LastName;
+                                        <td>@Html.ActionLink(name, "UserProfile", "Home", new { id = @item.Id }, null)</td>
+                                            }
+                                            <td class="hidden-xs hidden-sm"><a href="emailto:@item.Email">@item.Email</a></td>
+                                            <td class="hidden-xs">@item.PhoneNumber</td>
+                                            <td class="hidden-xs">
+                                                @if (item.ApplicationUser.Forms.Any(m => m.IsComplete != true))
+                                                {
+                                                    <p><strong>false</strong></p>
+                                                }
+                                                else
+                                                {
+                                                    <p><strong>true</strong></p>
+                                                }
+                                            </td>
+                                            <td>
+                                                @if (entry.CanDrive)
+                                                {
+                                                    carCapCounter += entry.CarCapacity;
+                                                    <p><strong>true</strong> (@entry.CarCapacity)</p>
+                                                }
+                                                else
+                                                {
+                                                    <p><strong>false</strong></p>
+                                                }
+                                            </td>
+                                            <td class="hidden-xs">
+                                                @item.Birthday.ToShortDateString()
+                                            </td>
+                                            @{
+                                                DateTime now = DateTime.Today;
+                                                int age = now.Year - item.Birthday.Year;
+                                                if (now < item.Birthday.AddYears(age))
+                                                {
+                                                    age = age - 1;
+                                                }
+                                                <td class="hidden-xs">@age</td>
+                                            }
+                                            @if (Model.Race.Date.DayOfWeek.ToString() == "Friday")
+                                            {
+                                                <td>@entry.Departure.ToShortTimeString()</td>
+                                            }
+                                            <td>
+                                                <p>@item.EmergencyContactName</p>
+                                                <p>@String.Format("{0:(###) ###-####}", item.EmergencyContactPhoneNumber)</p>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            }
+
+
+                        }
+                    </tbody>
+                </table>
+                <p><strong>Total People:</strong> @PeopleCounter</p>
+                <p><strong>Total Car Capacity:</strong> @carCapCounter</p>
+                <p>___________</p>
+                
+                
+                        int total = PeopleCounter - carCapCounter;
+                        if (total > 0)
+                        {             
+                           <p class="alert alert-danger"><strong>Without Seats For: </strong>@total</p>
+                        }
+                        else
+                        {
+                            <p class="alert alert-success"><strong>All Accounted For!</strong></p>
+                        }
+
+                using (Html.BeginForm("PublishRaceComment", "Home", new { raceId = Model.Race.RaceId, authorId = Model.User.Id }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                if (Model.User.Approved)
+                {
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @Html.TextArea("commentInfo", Model.Comment.Info, new { @class = "form-control post_box" })
+                                        @Html.ValidationMessageFor(model => model.Comment.Info, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="submit" value="Post" class="btn btn-danger" />
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-md-offset-1">
+                            @if(Model.Comments != null){
+                                foreach (var item in Model.Comments)
+                                {
+                                    <div class="row feedBlock">
+                                        <div class="col-xs-12">
+                                            <br />
+                                            <p class="feedText">@{
+                                    String name = item.Author.FirstName + " " + item.Author.LastName;
+                                    @Html.ActionLink(name, "UserProfile", "Home", new { id = item.Author.Id }, null);
+                                            }</p>
+                                            <hr />
+                                            <p class="feedText">@item.Info</p>
+                                            
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                <hr />
+                                                <p class="feedText">Respond to <a href="emailto:@item.Author.Email">@item.Author.FirstName</a></p>
+                                            }
+                                        </div>
+                                    </div>
+                                 }
+
+                              }
+                                        </div>
+                                    </div>
+                }
+
+                }
+                            }
+                            else
+                            {
+                            <h3>No Registered Entries</h3>
+                            }
+                        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#raceProfileTable").tablesorter();
+        });
+
+        function tinyToText() {
+
+            ed = tinyMCE.getInstanceById('yourId');
+
+            if (ed) {
+                $("#yourId").val(ed.getContent());
+            }
+        }
+        tinymce.init({
+            selector: "#commenttextarea",
+            plugins: "link"
+        })
+    </script>
+}

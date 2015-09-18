@@ -1,0 +1,91 @@
+﻿<div id="RemoveUsers">
+    @using (Html.BeginForm())
+    {
+    @Html.AntiForgeryToken()
+    <h3 id="section-5">User Removal</h3>
+    <h4>Remove inactive site members from the WTC website</h4>
+    <div class="row">
+        <div class="hidden-xs hidden-sm col-md-12">
+            <table id="peopleTable" class="table table-condensed tablesorter">
+                <thead>
+                    <tr>
+                        <th>
+                            Name <span class="glyphicon glyphicon-menu-down"></span>
+                        </th>
+                        <th>
+                            Email <span class="glyphicon glyphicon-menu-down"></span>
+                        </th>
+                       
+                        <th>
+                            Remove
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.People)
+                    {
+                    if (!item.Email.Equals(User.Identity.Name))
+                    {
+                        
+                    
+
+                        <tr>
+                            <td>
+                                @*<p data-toggle="tooltip" data-placement="left" title="Form, Form, Form">@item.FirstName @item.LastName</p>*@
+                                    @item.FirstName @item.LastName
+
+                            </td>
+
+                            <td><a href="emailto:@item.Email">@item.Email</a></td>
+                            
+                            
+                                <td>@Ajax.ActionLink("Remove", "RemoveUser", new { userId = item.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "RemoveUsers" }, new { @class = "btn btn-danger" })</td>
+                           
+                        </tr>
+
+                        //Add Email in Profile
+                      }
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="col-xs-12 hidden-md hidden-lg">
+            <table id="peopleTableSmall" class="table table-condensed tablesorter">
+                <thead>
+                    <tr>
+                        <th>
+                            Name <span class="glyphicon glyphicon-menu-down"></span>
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.People)
+                    {
+                    if (!item.Email.Equals(User.Identity.Name))
+                    {
+
+                        <tr>
+                            <td>
+                                @*<p data-toggle="tooltip" data-placement="left" title="Form, Form, Form">@item.FirstName @item.LastName</p>*@
+                                    <a href="emailto:@item.Email">@item.FirstName @item.LastName</a>
+
+                            </td>
+      
+                                <td>@Ajax.ActionLink("Remove", "RemoveUser", new { userId = item.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "RemoveUsers" }, new { @class = "btn btn-danger" })</td>
+
+                        </tr>
+
+                        }
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 information">
+            <h1>Membership</h1>
+            <div role="tabpanel">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Membership</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Benefits</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fees</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Mailing Lists</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <br />
+                        <p><strong>Membership in the WTC is easy!</strong></p>
+                        <p>1) Fill out our online <a href="https://win.wisc.edu/form/step/1?Guid=f9b6888c-8266-42c8-83b7-4370b9ed6a57" target="_blank">membership form</a>.</p>
+                        <p>2) Pay online at our <a href="https://squareup.com/market/wisconsin-track-club">square market</a>.</p>
+                        <p>3) Optional Wisconsin Track Club Connect form</p>
+                        <p>
+                            WTC Connect is a way for UW Students and Track Club members to connect with other members that live near each other and have similar interests.
+
+                            If you have any questions regarding the membership form, email us at witrackclub@gmail.com.
+                        </p>
+                    </div>
+
+
+
+
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                        <br />
+                        <ul>
+                            <li>Individual coaching</li>
+                            <li>Weekly training groups</li>
+                            <li>Monthly WTC newsletter</li>
+                            <li>Clinics on running topics</li>
+                            <li>Reduced entry fees to WTC sponsored events</li>
+                            <li>12% discount on shoes at Movin' Shoes</li>
+                            <li>Social events</li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                        <br />
+                        <ul>
+                            <li>$25 Individual for a Semester</li>
+                            <li>$40 Individual for a Year</li>
+                        </ul>
+                        <p>
+                            Memberships begin the month you join and are renewed annually, thereafter.
+                            **Please note that due to NCAA compliance issues, children who have entered high school & are not yet enrolled in a college cannot be members of WTC. Click <a href="">here</a> for why.
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="settings">
+                        <br />
+                        <p><strong>WTC Mailing Lists</strong></p>
+                        <p>This mailing list is used for general communications to WTC membership. Messages are sent to this group regarding social events, track events, general announcements, etc. To sign up for this group send a blank email to <a href="">join-witrackclub@lists.wisc.edu</a>.
+                        <br />
+                        To remove your email address from the list, send a blank email to <a href="">leave-witrackclub@lists.wisc.edu</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
+
+
