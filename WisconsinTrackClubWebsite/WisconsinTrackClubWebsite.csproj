@@ -566,6 +566,7 @@
     <Content Include="Assets\WTC2015STS2.pdf" />
     <Content Include="Assets\WTC2015STS3.pdf" />
     <Content Include="Assets\WTC-WIN.docx" />
+    <None Include="Properties\PublishProfiles\wisconsintrackclub %2810%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %284%29.pubxml" />
@@ -886,6 +887,7 @@
     <Content Include="Views\Home\_Status.cshtml" />
     <Content Include="Views\Home\_EmailApproval.cshtml" />
     <Content Include="Views\Home\_ModifyRace.cshtml" />
+    <Content Include="Views\Home\Workouts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
