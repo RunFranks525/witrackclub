@@ -250,6 +250,11 @@ namespace WisconsinTrackClubWebsite.Controllers
             return View("Bylaws");
         }
 
+        public ActionResult Workouts()
+        {
+            return View("Workouts");
+        }
+
         public ActionResult Membership()
         {
             return View("Membership");
