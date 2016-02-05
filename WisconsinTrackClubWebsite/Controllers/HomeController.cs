@@ -488,7 +488,15 @@ namespace WisconsinTrackClubWebsite.Controllers
 
                 var prof = db.Profiles.Find(userId);
                 bool allComplete = userForms.All(form => form.IsComplete);
-
+                if(prof.State != null && prof.State != "Wisconsin")
+                {
+                    if(form4Complete == null)
+                    {
+                        userForms[3].IsComplete = true;
+                        db.Entry(userForms[3]).State = System.Data.Entity.EntityState.Modified;
+                        allComplete = userForms.All(form => form.IsComplete);
+                    }
+                }
                 prof.Approved = allComplete;
                 db.Entry(prof).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();

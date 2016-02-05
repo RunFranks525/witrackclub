@@ -75,13 +75,29 @@
                                                                 }
                                                                 else
                                                                 {
+
                                                                     <input name="@Name" type="checkbox" class="@Class" value="@Value" />
                                                                 }
                                                                 @*<input name="@Name" type="checkbox" class="@Class" value="@Value" />*@
                                                             }
                                                             else
                                                             {
-                                                                <input name="@Name" type="checkbox" class="@Class" value="@Value" checked="checked" />
+                                                                if (userForm.Form.FormId == 4)
+                                                                {
+                                                                    if (item.State == null || !item.State.Equals("Wisconsin"))
+                                                                    {
+                                                                        <input name="@Name" type="checkbox" class="@Class" value="@Value" disabled="disabled" />
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <input name="@Name" type="checkbox" class="@Class" value="@Value" checked="checked" />
+                                                                    }
+                                                                }
+                                                                else
+                                                                {
+
+                                                                    <input name="@Name" type="checkbox" class="@Class" value="@Value" checked="checked" />
+                                                                }
                                                             }
                                                     </div>
                                                     count++;

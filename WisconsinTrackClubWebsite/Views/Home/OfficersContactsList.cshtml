@@ -7,15 +7,13 @@
 }
 
 <div class="container information">
-
-
-
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
     <div class="row hidden-xs hidden-sm officer-div">
         <div class="col-md-4">
             <h2>Officers and Contacts</h2>
+            <h3>Elected Officials</h3>
             @foreach (var officer in Model.people)
             {
                 <div class="row officerLink">
@@ -30,13 +28,10 @@
             @if (Model.OfficerInContext != null)
             {
                 <p>@Model.OfficerInContext.Name</p>
-
             }
         </div>
     </div>
     }
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
