@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WisconsinTrackClubWebsite.Models
 {
+    //[Table("Race", Schema = "WiTrackClub")]
     public class Race
     {
         public int RaceId { get; set; }

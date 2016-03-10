@@ -193,6 +193,6 @@ C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsit
 C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\bin\System.Web.Optimization.xml
 C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\bin\Zlib.Portable.xml
 C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csproj.App.config
-C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csprojResolveAssemblyReference.cache
 C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.dll
 C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.pdb
+C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csprojResolveAssemblyReference.cache
