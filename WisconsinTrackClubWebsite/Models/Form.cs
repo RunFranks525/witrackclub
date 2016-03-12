@@ -8,7 +8,7 @@ namespace WisconsinTrackClubWebsite.Models
 {
     public class Form
     {
-        public int FormId { get; set; }
+        public string FormId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

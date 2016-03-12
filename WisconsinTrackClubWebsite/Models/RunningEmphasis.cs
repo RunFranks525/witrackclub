@@ -10,7 +10,7 @@ namespace WisconsinTrackClubWebsite.Models
     public class RunningEmphasis
     {
         [Key]
-        public int EmphasisId { get; set; }
+        public string EmphasisId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }

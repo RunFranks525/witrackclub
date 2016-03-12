@@ -12,7 +12,7 @@ namespace WisconsinTrackClubWebsite.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("LocalConnection", throwIfV1Schema: false)
         {
         }
 
@@ -26,7 +26,7 @@ namespace WisconsinTrackClubWebsite.Models
         //public DbSet<Post> Posts { get; set; }
         public DbSet<UserForm> UserForms { get; set; }
         public DbSet<UserRace> UserRaces { get; set; }
-        public DbSet<UserRunEntry> UserRunEntry { get; set; }
+        //public DbSet<UserRunEntry> UserRunEntry { get; set; }
 
         public static ApplicationDbContext Create()
         {

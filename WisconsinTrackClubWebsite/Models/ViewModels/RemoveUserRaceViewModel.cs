@@ -7,7 +7,7 @@ namespace WisconsinTrackClubWebsite.Models.ViewModels
 {
     public class RemoveUserRaceViewModel
     {
-        public int UserRaceId { get; set; }
+        public string UserRaceId { get; set; }
         public Race Race { get; set; }
     }
 }

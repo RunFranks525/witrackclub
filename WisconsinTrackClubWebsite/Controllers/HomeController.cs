@@ -226,7 +226,7 @@ namespace WisconsinTrackClubWebsite.Controllers
         }
 
         [HttpPost]
-        public ActionResult OfficerLoader(int officerId)
+        public ActionResult OfficerLoader(string officerId)
         {
             var officer = db.Officers.Find(officerId);
             OfficerViewModel ovm = new OfficerViewModel();
@@ -795,7 +795,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                     var prof = db.Profiles.Find(userId);
                     information.Author = prof;
                     Random rnd = new Random();
-                    information.Id = rnd.Next(1, 100000);
+                    information.Id = Guid.NewGuid().ToString();
                     information.Type = "Announcement";
                     db.Information.Add(information);
                     db.SaveChanges();
@@ -840,7 +840,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                     var prof = db.Profiles.Find(userId);
                     information.Author = prof;
                     Random rnd = new Random();
-                    information.Id = rnd.Next(1, 100000);
+                    information.Id = Guid.NewGuid().ToString();
                     information.Type = "CurrentEvent";
                     db.Information.Add(information);
                     db.SaveChanges();
@@ -932,7 +932,7 @@ namespace WisconsinTrackClubWebsite.Controllers
         }
 
         [HttpGet]
-        public ActionResult RaceProfile(int id)
+        public ActionResult RaceProfile(string id)
         {
             if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {

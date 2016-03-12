@@ -7,7 +7,7 @@ namespace WisconsinTrackClubWebsite.Models
 {
     public class Person
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
         public string Bio { get; set; }

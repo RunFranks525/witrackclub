@@ -250,14 +250,12 @@
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\RacesController.cs" />
     <Compile Include="Controllers\UserRacesController.cs" />
-    <Compile Include="Controllers\UserRunEntriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Information.cs" />
     <Compile Include="Models\RunEntry.cs" />
-    <Compile Include="Models\UserRunEntry.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Form.cs" />

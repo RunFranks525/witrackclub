@@ -11,7 +11,7 @@ namespace WisconsinTrackClubWebsite.Models
     //[Table("Information", Schema = "WiTrackClub")]
     public class Information
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Display(Name = "Title")]
         public String UpdateTitle { get; set; }
         [DataType(DataType.MultilineText)]

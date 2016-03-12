@@ -14,7 +14,8 @@ namespace WisconsinTrackClubWebsite
     {
         protected void Application_Start()
         {
-           // Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+            // Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             using (var context = new ApplicationDbContext())
             {
                 context.Database.Initialize(force: true);

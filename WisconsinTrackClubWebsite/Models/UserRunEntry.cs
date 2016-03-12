@@ -8,7 +8,7 @@ namespace WisconsinTrackClubWebsite.Models
 {
     public class UserRunEntry
     {
-        public int UserRunEntryId { get; set; }
+        public string UserRunEntryId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual RunEntry Run { get; set; }
         
