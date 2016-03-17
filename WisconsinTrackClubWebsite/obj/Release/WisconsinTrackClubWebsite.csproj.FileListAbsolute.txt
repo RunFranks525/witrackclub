@@ -292,6 +292,5 @@ C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\bin\System.Web.Optimization.xml
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\bin\Zlib.Portable.xml
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csproj.App.config
-C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csprojResolveAssemblyReference.cache
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.dll
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.pdb

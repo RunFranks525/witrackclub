@@ -254,6 +254,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Form.cs" />
     <Compile Include="Models\Information.cs" />
     <Compile Include="Models\RunEntry.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
