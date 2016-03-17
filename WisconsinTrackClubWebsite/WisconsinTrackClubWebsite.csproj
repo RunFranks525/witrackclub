@@ -258,7 +258,6 @@
     <Compile Include="Models\RunEntry.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\Form.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\PaceCalculator.cs" />
     <Compile Include="Models\Person.cs" />
