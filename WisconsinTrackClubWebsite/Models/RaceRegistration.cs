@@ -8,7 +8,7 @@ namespace WisconsinTrackClubWebsite.Models
 {
     public class RaceRegistration
     {
-        public string RaceRegistrationId { get; set; }
+        public Guid RaceRegistrationId { get; set; }
         public virtual Race RegisteredRace { get; set; }
         public Profile RegisteredPerson { get; set; }
         public bool Registered { get; set; }

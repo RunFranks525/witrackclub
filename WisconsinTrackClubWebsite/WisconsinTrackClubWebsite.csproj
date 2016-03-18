@@ -566,6 +566,7 @@
     <Content Include="Assets\WTC2015STS3.pdf" />
     <Content Include="Assets\WTC-WIN.docx" />
     <None Include="Properties\PublishProfiles\publishProfileA.pubxml" />
+    <None Include="Properties\PublishProfiles\wisconsintrackclub %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub.pubxml" />
     <Content Include="Scripts\angular.js" />

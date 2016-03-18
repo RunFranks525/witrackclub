@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +7,9 @@ namespace WisconsinTrackClubWebsite.Models
 {
     public class Information
     {
-        public string Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid Id { get; set; }
         [Display(Name = "Title")]
         public String UpdateTitle { get; set; }
         [DataType(DataType.MultilineText)]

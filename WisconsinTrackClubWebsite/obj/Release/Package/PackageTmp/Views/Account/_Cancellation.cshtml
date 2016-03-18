@@ -1,0 +1,6 @@
+﻿@model WisconsinTrackClubWebsite.Models.Race
+
+
+<div id="Cancel_@Model.RaceId">
+    @Ajax.ActionLink("Cancel", "RaceCancellation", new { raceId = @Model.RaceId }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Cancel_" + @Model.RaceId.ToString() }, new { @class = "btn btn-danger" })
+</div>

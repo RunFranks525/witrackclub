@@ -1,0 +1,66 @@
+﻿@model WisconsinTrackClubWebsite.Models.ViewModels.OfficerViewModel
+@{
+    ViewBag.Title = "OfficersContacts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<div class="container information">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row hidden-xs hidden-sm officer-div">
+            <div class="col-md-4">
+                <h2>Officers and Contacts</h2>
+                <h3>Elected Officials</h3>
+                @foreach (var officer in Model.people)
+                {
+                    <div class="row officerLink">
+                        <div class="col-md-6">
+                            @Ajax.ActionLink(officer.Position, "OfficerLoader", new { officerId = officer.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "officerLoaderBig" }, new { @class = "btn btn-custom" })
+                        </div>
+                    </div>
+                }
+                <br />
+            </div>
+            <div class="col-md-6" id="officerLoaderBig">
+                @if (Model.OfficerInContext != null)
+                {
+                    <p>@Model.OfficerInContext.Name</p>
+                }
+            </div>
+        </div>
+    }
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row officer-div hidden-md hidden-lg">
+            <div class="col-xs-12">
+                <h2>Officers and Contacts</h2>
+                @foreach (var officer in Model.people)
+            {
+            <div class="col-xs-6">
+                @Ajax.ActionLink(officer.Position, "OfficerLoader", new { officerId = officer.Id }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "officerLoaderSmall" }, new { @class = "btn btn-custom" })
+            </div>
+            }
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8" id="officerLoaderSmall">
+                @if (Model.OfficerInContext != null)
+                {
+            <p>@Model.OfficerInContext.Name</p>
+
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+

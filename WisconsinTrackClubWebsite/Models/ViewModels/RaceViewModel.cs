@@ -9,7 +9,7 @@ namespace WisconsinTrackClubWebsite.Models.ViewModels
     {
         public Profile Profile { get; set; }
         public List<Race> Races { get; set; }
-        public string RaceId { get; set; }
+        public Guid RaceId { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
         public DateTime Date { get; set; }

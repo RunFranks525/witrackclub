@@ -294,3 +294,4 @@ C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csproj.App.config
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.dll
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.pdb
+C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csprojResolveAssemblyReference.cache

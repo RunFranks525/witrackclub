@@ -9,7 +9,7 @@ namespace WisconsinTrackClubWebsite.Models
 {
     public class RunEntry
     {
-        public string ID { get; set; }
+        public Guid ID { get; set; }
         [Required]
         public String Course { get; set; }
         [Required]

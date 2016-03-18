@@ -1,0 +1,117 @@
+﻿@model WisconsinTrackClubWebsite.Models.ViewModels.AdminInterfaceViewModel
+@{
+    ViewBag.Title = "Admin Center";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="col-xs-12 col-md-8 col-md-push-2 admin_information">
+        <h2>Admin Interface</h2>
+        <h4>Interact with WTC</h4>
+        
+        <p>@Html.ActionLink("Return to My Profile", "Manage", "Account")</p>
+    </div>
+   
+    @if (User.IsInRole("MeetEntry"))
+    {
+        <div class="row">
+            <div class="col-xs-12 col-md-6 admin_information">
+                @*@Html.Partial("_ModifyRace", ViewBag.Races);*@
+            </div>
+        </div>
+    }
+    
+
+        <div class="row">
+            <div class="col-xs-12 admin_information">
+                @Html.Partial("_Approval", Model.UserFormCollection)
+            </div>
+        </div> 
+   
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-xs-12 admin_information">
+                @Html.Partial("_RaceRegisteredMembers", Model.RaceRegistrations)
+            </div>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6 admin_information">
+            @Html.Partial("_Announcements", Model)
+        </div>
+
+        <div class="col-xs-12 col-md-6 admin_information">
+            @Html.Partial("_CurrentEvent", Model)
+        </div>
+    </div>
+    @if (User.IsInRole("Remover"))
+    {
+        
+        <div class="row">
+            <div class="col-xs-12 admin_information">
+                @Html.Partial("_Remove", Model)
+            </div>
+        </div>
+        
+    }
+    
+
+    
+    
+    
+</div>
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                var dataString = $(this).serializeArray();
+                console.log(dataString);
+
+                $.ajax({
+                    type: "POST",
+                    url: "Approved",
+                    data: dataString,
+                    
+                    success: function () {
+                        alert("Approved");
+                    },
+                    error: function () {
+                        alert("Approved");
+                    }
+                });
+
+                event.preventDefault();
+            });
+
+
+            $("#raceTable").tablesorter();
+            $("#peopleTable").tablesorter();
+            $("#peopleTableSmall").tablesorter();
+
+        }
+);
+        //var $focused = $(':focus');
+        //alert($focused);
+
+        $(function () {
+            //$('[data-toggle="popover"]').popover()
+            $('[data-toggle="popover"]').popover({ trigger: "hover" })
+        });
+        function publishAnnouncementSuccess() {
+            $("#form0").clearForm();
+        }
+        function publishCurrentEventSuccess() {
+            $("#form1").clearForm();
+        }
+        function ensureSubmission() {
+            if (!confirm("Are you sure you want to remove this entry?")) return;
+        }
+    </script>
+}

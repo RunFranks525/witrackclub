@@ -10,7 +10,7 @@ namespace WisconsinTrackClubWebsite.Models
     //[Table("Race", Schema = "WiTrackClub")]
     public class Race
     {
-        public string RaceId { get; set; }
+        public Guid RaceId { get; set; }
         [Required]
         public string RaceName { get; set; }
         [Required]

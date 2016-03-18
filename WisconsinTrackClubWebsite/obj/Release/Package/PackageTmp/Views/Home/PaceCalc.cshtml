@@ -1,0 +1,63 @@
+﻿@model WisconsinTrackClubWebsite.Models.PaceCalculator
+@{
+    ViewBag.Title = "PaceCalc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="hidden-xs hidden-sm col-md-2 sidebar">
+            @Html.Partial("_SideNav")
+        </div>
+        <div class="hidden-xs hidden-md hidden-lg col-sm-2 sidebar">
+            @Html.Partial("_SmallSideViewPartial")
+        </div>
+        <div class="col-xs-12 col-sm-9 col-sm-offset-3 col-md-8 manager main">
+            <h2>Pace Calculator</h2>
+@using (Ajax.BeginForm("CalculatePace", "Home", new AjaxOptions { UpdateTargetId = "divPace" }))
+{
+    
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="input-group">
+                @*<div class="input-sm">
+                @Html.LabelFor(model => model.THours)
+            </div>*@
+                <div class="input-sm">
+                    @Html.LabelFor(model => model.Minutes)
+                </div>
+                <div class="input-sm">
+                    @Html.EditorFor(model => model.Minutes)
+                </div>
+                <div class="input-sm">
+                    @Html.LabelFor(model => model.Seconds)
+                </div>
+                <div class="input-sm">
+                    @Html.EditorFor(model => model.Seconds)
+                </div>
+                <div class="input-sm">
+                    @Html.LabelFor(model => model.Miles)
+                </div>
+                <div class="input-sm">
+                    @Html.EditorFor(model => model.Miles)
+                </div>
+            </div>
+            @*<div id="divPace" class="hidden-md hidden-lg alert alert-danger" role="alert"></div>*@
+        </div>
+        <h3>Feeling Good? Check out how that last run went.</h3>
+        <div id="divPace" class="alert alert-danger hidden-xs hidden-sm col-md-6" role="alert">
+            @*<div id="divPace" class="alert alert-danger" role="alert"></div>*@
+        </div>
+    </div>
+           
+    <p>
+        <br />
+        <input type="submit" value="Calculate" class="btn btn-default" />
+    </p>
+}
+
+        </div>
+    </div>
+ </div>
+
+

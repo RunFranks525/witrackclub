@@ -795,7 +795,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                     var prof = db.Profiles.Find(userId);
                     information.Author = prof;
                     Random rnd = new Random();
-                    information.Id = Guid.NewGuid().ToString();
+                    information.Id = Guid.NewGuid();
                     information.Type = "Announcement";
                     db.Information.Add(information);
                     db.SaveChanges();
@@ -840,7 +840,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                     var prof = db.Profiles.Find(userId);
                     information.Author = prof;
                     Random rnd = new Random();
-                    information.Id = Guid.NewGuid().ToString();
+                    information.Id = Guid.NewGuid();
                     information.Type = "CurrentEvent";
                     db.Information.Add(information);
                     db.SaveChanges();
@@ -932,7 +932,7 @@ namespace WisconsinTrackClubWebsite.Controllers
         }
 
         [HttpGet]
-        public ActionResult RaceProfile(string id)
+        public ActionResult RaceProfile(Guid id)
         {
             if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {
