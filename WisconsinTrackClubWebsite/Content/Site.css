@@ -39,6 +39,10 @@ textarea {
         color: #b65f5d;
 }
 
+.sponsorRow{
+    margin-bottom:25px;
+}
+
 .radioButton{
     padding-left:5px;
     padding-right:5px;

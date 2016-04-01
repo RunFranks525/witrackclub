@@ -302,7 +302,10 @@
     <Content Include="Assets\AreaRuns\monona.gif" />
     <Content Include="Assets\AreaRuns\southwest.gif" />
     <Content Include="Assets\AreaRuns\wingra.gif" />
+    <Content Include="Assets\art gecko.png" />
     <Content Include="Assets\ASM.jpg" />
+    <Content Include="Assets\bagelsForever.png" />
+    <Content Include="Assets\capcenmarlogo.png" />
     <Content Include="Assets\cow.jpg" />
     <Content Include="Assets\cows.jpg" />
     <Content Include="Assets\Icons\Calc1.png" />
@@ -321,9 +324,11 @@
     <Content Include="Assets\Merchants\etm.jpg" />
     <Content Include="Assets\Merchants\Madison_StackedLogo.jpg" />
     <Content Include="Assets\MOOvin5k.png" />
+    <Content Include="Assets\moovin_5k.png" />
     <Content Include="Assets\notification.png" />
     <Content Include="Assets\profile_temp.jpg" />
     <Content Include="Assets\run.png" />
+    <Content Include="Assets\sconnie.jpg" />
     <Content Include="Assets\slideshow_images\1.jpg" />
     <Content Include="Assets\slideshow_images\2.jpg" />
     <Content Include="Assets\19.jpg" />
@@ -339,6 +344,7 @@
     <Content Include="Assets\slideshow_images\5.jpg" />
     <Content Include="Assets\slideshow_images\4.jpg" />
     <Content Include="Assets\track.png" />
+    <Content Include="Assets\uwbookstore.jpg" />
     <Content Include="Assets\wallpaper.jpg" />
     <Content Include="Backload\Client\blueimp\blob\js\canvas-to-blob.min.js" />
     <Content Include="Backload\Client\blueimp\fileupload\cors\postmessage.html" />
@@ -881,6 +887,7 @@
     <Content Include="Views\Home\_EmailApproval.cshtml" />
     <Content Include="Views\Home\_ModifyRace.cshtml" />
     <Content Include="Views\Home\Workouts.cshtml" />
+    <Content Include="Views\Home\Sponsors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
