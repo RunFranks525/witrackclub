@@ -51,12 +51,12 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#@race.RaceId" aria-expanded="true" aria-controls="collapseOne">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#@race.Id" aria-expanded="true" aria-controls="collapseOne">
                                                 @race.RaceName -- <small>@race.Location</small>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="@race.RaceId" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div id="@race.Id" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                         <div class="panel-body">
                                             <h4>@race.RaceName is on @race.Date.ToString("D")</h4>
 
@@ -85,7 +85,7 @@
 
                                                     @foreach (var rr in Model.Runners)
                                                     {
-                                                        if (rr.RegisteredRace.RaceId == race.RaceId)
+                                                        if (rr.RegisteredRace.Id == race.Id)
                                                         {
                                                             @rr.RegisteredPerson.FirstName<span> </span>@rr.RegisteredPerson.LastName<span>   </span>
                                                             if (rr.RegisteredPerson.Email == User.Identity.Name)
@@ -209,7 +209,7 @@
                                                     <p>
                                                         @foreach (var rr in Model.Runners)
                                                         {
-                                                            if (rr.RegisteredRace.RaceId == race.RaceId)
+                                                            if (rr.RegisteredRace.Id == race.Id)
                                                             {
                                                                 @rr.RegisteredPerson.FirstName<span> </span>@rr.RegisteredPerson.LastName<span>   </span>
                                                                 if (rr.RegisteredPerson.Email == User.Identity.Name)
@@ -327,7 +327,7 @@
                                                     <p>
                                                         @foreach (var rr in Model.Runners)
                                                         {
-                                                            if (rr.RegisteredRace.RaceId == race.RaceId)
+                                                            if (rr.RegisteredRace.Id == race.Id)
                                                             {
                                                                 @rr.RegisteredPerson.FirstName<span> </span>@rr.RegisteredPerson.LastName<span>   </span>
                                                                 if (rr.RegisteredPerson.Email == User.Identity.Name)

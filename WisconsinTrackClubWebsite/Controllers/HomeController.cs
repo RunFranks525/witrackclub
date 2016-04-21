@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WisconsinTrackClubWebsite.Models.ViewModels;
 using WisconsinTrackClubWebsite.Models;
 using Microsoft.AspNet.Identity;
-using Google.GData.Client;
-using Google.GData.Spreadsheets;
 using System.Text;
 
 namespace WisconsinTrackClubWebsite.Controllers
@@ -65,7 +62,7 @@ namespace WisconsinTrackClubWebsite.Controllers
             {
                 var userId = User.Identity.GetUserId();
                 var profiles = (from u in db.Users
-                               where u.Id == userId
+                               where u.Id.Equals(userId)
                                select u.Profile).ToList();
                 if(profiles.Count != 0)
                 {
@@ -364,7 +361,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                                      Location = ur.Race.Location,
                                      Date = ur.Race.Date,
                                      Name = ur.Race.RaceName,
-                                     RaceId = ur.UserRaceId,
+                                     RaceId = ur.Id,
                                      HighLights = ur.HighLights
                                  }).ToList<RaceViewModel>();
                 MyRacesViewModel mrvm = new MyRacesViewModel();
@@ -588,7 +585,7 @@ namespace WisconsinTrackClubWebsite.Controllers
             aivm.Information = information;
             aivm.RaceRegistrations = (from rr in db.RaceRegistration
                                      where rr.RegisteredRace.Date > System.DateTime.Now
-                                     orderby rr.RegisteredRace.RaceId ascending
+                                     orderby rr.RegisteredRace.Id ascending
                                      select rr).ToList();
             string userId = User.Identity.GetUserId();
             var prof = db.Profiles.Find(userId);
@@ -754,7 +751,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                 var profile = Prof.Profile;
                 var race = db.Races.Find(raceId);
                 var raceRegistration = from r in db.RaceRegistration
-                                       where r.RegisteredPerson.Id == profile.Id && r.RegisteredRace.RaceId == race.RaceId
+                                       where r.RegisteredPerson.Id == profile.Id && r.RegisteredRace.Id == race.Id
                                        select r;
                 List<RaceRegistration> rr = raceRegistration.ToList();
                 if (rr.Count != 0)
@@ -868,7 +865,7 @@ namespace WisconsinTrackClubWebsite.Controllers
                 var profile = Prof.Profile;
                 var race = db.Races.Find(raceId);
                 var raceRegistration = from r in db.RaceRegistration
-                                       where r.RegisteredPerson.Id == profile.Id && r.RegisteredRace.RaceId == race.RaceId
+                                       where r.RegisteredPerson.Id == profile.Id && r.RegisteredRace.Id == race.Id
                                        select r;
                 List<RaceRegistration> rr = raceRegistration.ToList();
                 if (rr.Count != 0)
@@ -937,10 +934,10 @@ namespace WisconsinTrackClubWebsite.Controllers
             if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
             {
                 var usersInRace = (from r in db.RaceRegistration
-                                  where r.RegisteredRace.RaceId == id
+                                  where r.RegisteredRace.Id == id
                                   select r.RegisteredPerson).ToList();
                 var registrationEntries = (from r in db.RaceRegistration
-                                          where r.RegisteredRace.RaceId == id
+                                          where r.RegisteredRace.Id == id
                                           select r).ToList();
                 
                 RaceProfileViewModel rpvm = new RaceProfileViewModel();
