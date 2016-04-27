@@ -62,7 +62,7 @@
                                                     <div class="col-md-2">
                                                             @if (!form.IsComplete)
                                                             {
-                                                                if (userForm.Form.FormId == 4)
+                                                                if (userForm.Form.Id.ToString() == " ")
                                                                 {
                                                                     if (item.State == null || !item.State.Equals("Wisconsin"))
                                                                     {
@@ -82,7 +82,7 @@
                                                             }
                                                             else
                                                             {
-                                                                if (userForm.Form.FormId == 4)
+                                                                if (userForm.Form.Id.ToString() == " ")
                                                                 {
                                                                     if (item.State == null || !item.State.Equals("Wisconsin"))
                                                                     {
