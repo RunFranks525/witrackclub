@@ -57,7 +57,7 @@ namespace WisconsinTrackClubWebsite.Controllers
         {
             if (ModelState.IsValid)
             {
-                var raceToEdit = db.UserRaces.Find(race.UserRaceId);
+                var raceToEdit = db.UserRaces.Find(race.Id);
                 raceToEdit.HighLights = race.HighLights;
                 db.SaveChanges();
                 return RedirectToAction("MyRaces", "Home");
@@ -87,7 +87,7 @@ namespace WisconsinTrackClubWebsite.Controllers
             userRaces.Add(userRace);
 
             db.SaveChanges();
-            var contain = db.UserRaces.Where(c => c.Race.RaceId == race.RaceId && c.ApplicationUser.Profile.Id == userId).ToList();
+            var contain = db.UserRaces.Where(c => c.Race.Id == race.Id && c.ApplicationUser.Profile.Id == userId).ToList();
             if (contain.Count == 1)
             {
                 userRace = contain[0];
@@ -105,7 +105,7 @@ namespace WisconsinTrackClubWebsite.Controllers
             {
                 return HttpNotFound();
             }
-            return RedirectToAction("EditRace", new { id = userRace.UserRaceId });
+            return RedirectToAction("EditRace", new { id = userRace.Id });
         }
 
         // POST: UserRaces/Edit/5
@@ -138,9 +138,9 @@ namespace WisconsinTrackClubWebsite.Controllers
             }
 
             RemoveUserRaceViewModel vm = new RemoveUserRaceViewModel();
-            vm.UserRaceId = userRace.UserRaceId;
+            vm.UserRaceId = userRace.Id;
 
-            Race race = db.Races.Find(userRace.Race.RaceId);
+            Race race = db.Races.Find(userRace.Race.Id);
             vm.Race = race;
             return View(vm);
         }

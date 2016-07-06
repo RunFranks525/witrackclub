@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WisconsinTrackClubWebsite.Models
 {
+    [Table("Profiles", Schema = "WiTrackClub")]
     public class Profile
     {
         [ForeignKey("ApplicationUser")]

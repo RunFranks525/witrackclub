@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WisconsinTrackClubWebsite.Models
 {
+    [Table("Information", Schema = "WiTrackClub")]
+
     public class Information
     {
         [Key]

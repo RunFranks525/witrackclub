@@ -4,7 +4,10 @@
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Scott\\Documents\\GitHubVisualStudio\\witrackclub\\WisconsinTrackClubWebsite\\obj\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Scott\\Documents\\GitHubVisualStudio\\witrackclub\\WisconsinTrackClubWebsite\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=a1qcijh6g1.database.windows.net,1433;Initial Catalog=WTCDatabase_Old;Persist Security Info=True;User ID=stfranklin;Password=123C^tler" tags="">
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-WisconsinTrackClubWebsite-20150303092204.mdf;Initial Catalog=aspnet-WisconsinTrackClubWebsite-20150303092204;Integrated Security=True" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Scott\\Documents\\GitHubVisualStudio\\witrackclub\\WisconsinTrackClubWebsite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="LocalConnection-Web.config Connection String" description="" value="Data Source=a1qcijh6g1.database.windows.net,1433;Initial Catalog=WTCDatabase;Persist Security Info=True;User ID=stfranklin;Password=123C^tler" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Scott\\Documents\\GitHubVisualStudio\\witrackclub\\WisconsinTrackClubWebsite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LocalConnection']/@connectionString" />
   </parameter>
 </parameters>

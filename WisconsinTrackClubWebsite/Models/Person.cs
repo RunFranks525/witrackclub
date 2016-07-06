@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WisconsinTrackClubWebsite.Models
 {
+    [Table("People", Schema = "WiTrackClub")]
     public class Person
     {
         [Key]

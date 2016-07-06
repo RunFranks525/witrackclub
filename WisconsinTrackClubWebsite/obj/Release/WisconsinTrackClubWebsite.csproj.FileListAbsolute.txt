@@ -295,3 +295,5 @@ C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.dll
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.pdb
 C:\Users\stfranklin\Documents\GitHubVisualStudio\WisconsinTrackClub\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csprojResolveAssemblyReference.cache
+C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.Migrations.Init.resources
+C:\Users\Scott\Documents\GitHubVisualStudio\witrackclub\WisconsinTrackClubWebsite\obj\Release\WisconsinTrackClubWebsite.csproj.GenerateResource.Cache

@@ -7,10 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WisconsinTrackClubWebsite.Models
 {
-    //[Table("Race", Schema = "WiTrackClub")]
+    [Table("Races", Schema = "WiTrackClub")]
     public class Race
     {
-        public Guid RaceId { get; set; }
+        [Key]
+        public Guid Id { get; set; }
         [Required]
         public string RaceName { get; set; }
         [Required]
@@ -18,6 +19,7 @@ namespace WisconsinTrackClubWebsite.Models
         [Required]
         public DateTime Date { get; set; } 
         public DateTime RegistrationDeadline { get; set; }
+        public string Season { get; set; }
 
     }
 }
