@@ -569,6 +569,11 @@
     <Content Include="Assets\WTC2015STS2.pdf" />
     <Content Include="Assets\WTC2015STS3.pdf" />
     <Content Include="Assets\WTC-WIN.docx" />
+    <Content Include="Assets\MeetofMiles1Mile.pdf" />
+    <Content Include="Assets\MeetofMiles3k.pdf" />
+    <Content Include="Assets\WTC_STS_Schedule_2016.pdf" />
+    <Content Include="Assets\2016STS1.pdf" />
+    <Content Include="Assets\2016STS2.pdf" />
     <None Include="Properties\PublishProfiles\publishProfileA.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %289%29.pubxml" />
