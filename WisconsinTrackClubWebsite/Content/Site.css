@@ -1,0 +1,681 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    /*background-color: #B40404;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.BlockMember{
+    padding-left:50px;
+    background-color: #f2dede;
+}
+
+.ApproveMember{
+    padding-left:50px;
+    background-color: #dff0d8;
+}
+
+.ApproveUserText{
+        padding-top:5px;
+        font-size:large;     
+        color: #3c763d;
+}
+
+.BlockUserText{
+        padding-top:5px;
+        font-size:large; 
+        color: #b65f5d;
+}
+
+.sponsorRow{
+    margin-bottom:25px;
+}
+
+.radioButton{
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.raceList{
+    background-color:red;
+}
+
+.infoBox{
+    margin-top:10%;
+}
+
+.adminDiv{
+    margin-left:30px;
+}
+
+.btn-primary{
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #2e6da4;
+}
+
+.title{
+    margin-top:20px;
+}
+.left-box{
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #eeeeee;
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.activityBox{
+    margin-bottom:25px;
+}
+.activityBoxInfo{
+    font-size: 15px;
+    color:#fff;
+}
+
+.Profile-box{
+    padding-top: 25px;
+    padding-bottom:25px;
+    background-color: #eeeeee;
+    margin-top:20px;
+    margin-left:20px;
+}
+
+
+
+
+.position-button{
+    background-color: white;
+    padding-top:10px;
+    padding-bottom:20px;
+    margin:20px;
+    width: 300px;
+    height: 62px;
+}
+
+.container .left-box {
+  border-radius: 6px;
+}
+
+.home-contacts{
+    color:#B40404;
+}
+
+hr{
+    color:black;
+}
+
+.narrow{
+    background-color: #eeeeee;
+    height:25px;
+    width: 100%;
+    padding-bottom:4px;
+}
+.curr-event{
+    font-size:small;
+}
+
+.jumbotron p{
+    font-size:large;
+}
+
+.input-group .form-control{
+    width: 95%;
+    margin-left: 5%;
+}
+
+.container .officer-div{
+    margin-top:20px;
+    background-color:#eeeeee;
+}
+
+.offsetColor{
+    color:#fff;
+}
+
+.offsetColor:hover{
+    color:#fff;
+}
+
+.header-info{
+    padding-left:30px;
+}
+
+.profile-data{
+    font-size:large;
+    font-weight:bolder;
+    padding-right:10px;
+}
+
+.person-data{
+    padding:25px;
+}
+
+/*.user-data{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+}*/
+
+.announcementForm{
+    
+}
+
+footer{
+    background-color:#eeeeee;
+}
+
+
+
+
+
+
+.information{
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #eeeeee;
+    margin-top:20px;
+}
+
+.admin_information{
+    padding: 30px;
+    margin-bottom: 10px;
+    background-color: #eeeeee;
+    margin-top:10px;
+}
+
+.information_admin{
+    margin-bottom: 30px;
+    background-color: #eeeeee;
+    margin-top:20px;
+}
+.sub-information{
+    margin-bottom:15px;
+    padding: 30px;
+    background-color: #eeeeee;
+}
+
+.sub-information_left{
+    margin-bottom:30px;
+    padding-bottom: 30px;
+    padding-top:30px;
+    margin-left:30px;
+    background-color: #eeeeee;
+}
+
+.sub-information_right{
+    margin-bottom:30px;
+    padding-bottom: 30px;
+    padding-top:30px;
+    margin-left:15px;
+    background-color: #eeeeee;
+}
+
+.sub-information_right h2 {
+    text-align:center;
+}
+.sub-information_right h3 {
+    text-align:center;
+}
+.sub-information_right p{
+    text-align:center;
+}
+.sub-information_left h2 {
+    text-align:center;
+}
+.sub-information_left h3 {
+    text-align:center;
+}
+.sub-information_left p{
+    text-align:center;
+}
+
+.profileManageText{
+    padding-top:30px;
+    padding-left:10px;
+}
+
+.info_box{
+    width:100%;
+}
+
+.officerBox{
+    height:400px;
+    background-color:#b65f5d;
+    margin-top:50px;
+}
+
+.approveRow{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.btn-custom{
+    padding:10px;
+    width:250px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:3px;
+    margin-bottom:10px;
+    background-color:#b65f5d;
+    text-wrap: normal;
+    color:#eeeeee;
+}
+
+.post_box{
+    width:300px;
+}
+
+.highlight-information{
+    margin-bottom:30px;
+    padding: 30px;
+
+    background-color: #eeeeee;
+}
+.manager{
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #eeeeee;
+    /*margin-top:20px;*/
+    width:83.5%;
+}
+.manager_sm{
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #eeeeee;
+    margin-top:20px;
+    width:80%;
+}
+
+.continer .manager{
+    border-radius:6px;
+}
+
+.adjust {
+    padding-top: 25px;
+    padding-left: 3.5%;
+}
+
+.UserProfImg {
+    padding-top: 25px;
+    padding-left: 3.5%;
+}
+
+.event-text{
+    font-size:15px;
+}
+
+
+
+.container .information{
+    border-radius: 6px;
+}
+
+a{
+    color:#B40404;
+}
+a:hover{
+    color:#b65f5d;
+}
+
+.intro{
+    padding-left:15px;
+    padding-right:15px;
+    font-size: 16px;
+    text-align:justify;
+}
+
+.announcements{
+    font-size:large;
+    padding-left:30px;
+}
+
+.updateAlert{
+    padding-left:7px;
+}
+
+.announcementBlock{
+    padding:30px;
+    border-color:#808080;
+    box-shadow:10px black;
+    background-color:whitesmoke;
+
+}
+
+.officerBlock{
+    padding:30px;
+    margin-top:60px;
+    border-color:#808080;
+    box-shadow:10px black;
+    background-color:whitesmoke;
+
+}
+.announcementBlock_large{
+    padding:25px;
+    margin:5px;
+    background-color:whitesmoke;
+
+}
+.announcementsTitle{
+    
+    padding:5%;
+    margin-bottom:20px;
+    font-size:x-large;
+}
+
+.announcementsRow{
+    background-color:#b65f5d;
+    color:white;
+    padding:2%;
+    margin-left: -7%;
+}
+.announcementsRow_large{
+    background-color:#b65f5d;
+    color:white;
+    padding:2%;
+}
+
+
+.announcementsHR{
+    border-color: black;
+    box-shadow: 5px 5px 0px #888888;
+}
+.announcementsText{
+        text-indent:40px;
+        font-size:medium;
+        text-align:left;
+}
+.announcementsAuthor{
+        font-size:large;
+        text-indent:20px;
+}
+.announcementsAuthor:before{
+    content: "- ";
+}
+
+
+.diff{
+    font-size:medium;
+}
+
+.cow-img{
+    width:50px;
+    height:50px;
+    float:left;
+}
+
+/*.curr-event-img{
+    height:315;
+    width:235;
+}*/
+
+.widget-title {
+    background: url("../Assets/hr.png") repeat-x scroll center center transparent;
+    margin: 0.5rem 0 0.5rem 0;
+    text-align: left;
+}
+
+.widget-title span{
+    background: none repeat scroll 0 0 #eeeeee;
+    padding: 0 ;
+}
+
+.divider-title{
+    background: url("../Assets/hr.png") repeat-x scroll center center transparent;
+    margin-bottom:10px;
+    text-align: left;
+}
+
+.divider-title span {
+background: none repeat scroll 0 0 #eeeeee;
+margin-left: 1.2rem;
+padding: 0 1rem;
+text-transform: none;
+}
+
+.tab_text{
+    font-style:italic;
+    
+}
+
+.sidebar{
+position: fixed;
+top: 51px;
+bottom: 0;
+left: 0;
+z-index: 1000;
+display: block;
+padding-left: 7px;
+padding-top:10px;
+overflow-x: hidden;
+overflow-y: auto;
+background-color: #f5f5f5;
+}
+
+.tab_click{
+    background-color:#B40404;
+    border-radius:3px;
+    border-left-color:white;
+    border-left-width:5px;
+    color:white;
+}
+
+.feedBlock{
+    width:100%;
+    padding:12px;
+    background-color:#fff;
+    border-radius:3px;
+    border-bottom:3px solid #808080;
+    margin-bottom:10px;
+
+}
+.raceCard{
+    width:100%;
+    padding:12px;
+    background-color:#fff;
+    border-radius:3px;
+    border-bottom:3px solid #808080;
+    margin-bottom:10px;
+
+}
+.userFeedBlock{
+    width:100%;
+    padding:12px;
+    background-color:#fff;
+    border-radius:3px;
+    border-bottom:3px solid #808080;
+}
+
+.feedInd{
+    background-color: #b65f5d;
+    border-radius:6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    color:#fff;
+}
+
+.img-feed{
+    margin-right:10px;
+}
+.feedName{
+    color:#B40404;
+}
+
+.title-group-feed{
+    margin-left:0px;
+    margin-top:12.5px;
+}
+
+.title-group-feed-small{
+    margin-left:15px;
+    margin-top: 15px;
+}
+
+.feedText{
+    font-size:large;
+}
+
+
+.feedText_small{
+    font-size:medium;
+    
+}
+
+.AddPost{
+    background-color:#fda6a6;
+    margin-top: -30px;
+    margin-bottom: 45px;
+    height: 75px;
+}
+
+.AddPost-text{
+    color: #B40404;
+    font-size:xx-large;
+}
+
+.AddPost-text:hover{
+    color: #B40404;
+    font-size:xx-large;
+    text-decoration:none;
+}
+
+
+
+.feedTextInvert{
+    font-size:16px;
+    font-style:italic;
+}
+
+.tab_click:hover{
+    text-decoration:none;
+    color:black;
+}
+
+a.smallNavProfile
+{
+    background: url(../Assets/Icons/Profile1.png) no-repeat top left;
+     display: block;
+     height: 75px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+a.smallNavForms
+{
+    background: url(../Assets/Icons/Forms1.png) no-repeat top left;
+     display: block;
+     height:75px;
+     text-indent: -9999px; /* hides the link text */
+}
+a.smallNavRaces
+{
+    background: url(../Assets/Icons/Race1.png) no-repeat top left;
+     display: block;
+     height:75px;
+     text-indent: -9999px; /* hides the link text */
+}
+a.smallNavPaceCalc
+{
+    background: url(../Assets/Icons/Calc1.png) no-repeat top left;
+     display: block;
+     height:75px;
+     text-indent: -9999px; /* hides the link text */
+}
+a.smallNavLog
+{
+    background: url(../Assets/Icons/Log1.png) no-repeat top left;
+     display: block;
+     height:75px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+
+
+.tab_inner{
+
+    margin:25px;
+    max-width:600px;
+    background-color: white;
+    border-left:solid;
+    border-left-color: #B40404;
+    border-left-width:20px;
+    padding:10px;
+    box-shadow: #808080 5px 5px;
+}
+
+/*.login_cont{
+    background-image:url("/Assets/wallpaper.jpg");
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+}*/
+
+h2{
+    display:block;
+}
+
+.updates{
+    float:right;
+    margin-left:30px;
+    margin-bottom:10px;
+}
+
+.updates-small{
+  margin-left: 95px;
+  margin-bottom: 10px;
+}
+
+
+
+li{
+    font-size:16px;
+}
+
+/*.drop{
+    background-color: #222222;
+    border-color: #080808;
+    color:white;
+
+}*/
+
+.home_image:hover{
+    background-color:red;
+    opacity:.5;
+}
+
+.profile-text{
+    font-size:large;
+}
+
+/*BLUR*/
+.blur img {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+          
+}
+ 
+.blur img:hover {
+  -webkit-filter: blur(5px);
+content:string("Wisconsin Track Club")
+
+}
+

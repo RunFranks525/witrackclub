@@ -1,0 +1,291 @@
+﻿@model WisconsinTrackClubWebsite.Models.ViewModels.FeedViewModel
+
+@{
+    ViewBag.Title = "Feed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="hidden-xs hidden-sm hidden-md col-lg-2 sidebar">
+            @Html.Partial("_sideNav", Model.Profile.Profile)
+        </div>
+        <div class="col-md-11 col-md-offset-1 col-lg-9 col-lg-offset-2 hidden-xs hidden-sm manager main">
+            <h3>WTC Activity Feed</h3>
+            @using (Html.BeginForm("PublishPost", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                if (Model.Profile.Profile.Approved)
+                {
+                    <div class="row">
+                        <div class="col-md-5 col-md-push-3">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @Html.TextArea("info", Model.Post.Info, new { @class = "form-control post_box", @id = "posttextarea" })
+                                        @Html.ValidationMessageFor(model => model.Post.Info, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="submit" value="Post" class="btn btn-danger" onclick="tinyToText" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="row">
+                    @if (Model.UserRaces.Count == 0 && Model.Posts.Count == 0)
+                    {
+             
+                    }
+                    else
+                    {
+                        <div class="col-md-10">
+                            @Html.Partial("_NewPost", Model)
+
+                            @foreach (var item in Model.UserRaces)
+                            {
+                                string url = null;
+
+                                if (!String.IsNullOrEmpty(item.ApplicationUser.Profile.FacebookProviderKey))
+                                {
+                                    url = "https://graph.facebook.com/" + item.ApplicationUser.Profile.FacebookProviderKey + "/picture?type=large";
+                                }
+                                else
+                                {
+                                    url = "../Assets/cow.jpg";
+                                }
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-8 col-md-push-3">
+                                            <div class="feedBlock">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-xs-2">
+                                                                <img src="@url" height="60" width="60" class="img-circle " />
+                                                            </div>
+                                                            <div class="col-xs-9 col-xs-push-1 hidden-md hidden-lg title-group-feed-small">
+                                                                <h5 class="feedName">
+                                                                    @{
+                                                                    String name = item.ApplicationUser.Profile.FirstName + " " + item.ApplicationUser.Profile.LastName;
+                                                                    @Html.ActionLink(name, "UserProfile", "Home", new { id = @item.ApplicationUser.Profile.Id }, null);
+
+                                                                    }
+
+                                                            </h5>
+                                                                <p><small>@item.Race.Date.ToString("D")</small></p>
+
+                                                            <p><small></small></p>
+
+                                                        </div>
+                                                        <div class=" hidden-xs hidden-sm col-md-9 title-group-feed">
+                                                            <h4 class="feedName">
+                                                                @{
+                                                                    @Html.ActionLink(name, "UserProfile", "Home", new { id = @item.ApplicationUser.Profile.Id }, null);
+                                                                }
+
+                                                            </h4>
+                                                            <p><small>@item.Race.Date.ToString("D")</small></p>
+
+
+                                                            <p><small></small></p>
+
+                                                        </div>
+                                                           
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <br />
+                                                        <p class="feedText">Ran the @item.Race.RaceName</p>
+                                                        <hr />
+                                                        <p class="feedText" style="font-style:italic">"@item.HighLights"</p>
+                                                        <hr />
+                                                        @Ajax.ActionLink("Like", "Like", "Home", new { id = item.UserRaceId }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = @item.UserRaceId.ToString() })
+                                                        @Html.Partial("_Like", item)
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            
+                        </div>   
+                    }
+                </div>
+            }
+        </div>
+       
+        <div class="hidden-xs hidden-md hidden-lg row">
+            <div class="col-sm-11 col-sm-offset-1 manager_sm main">
+                @{ Model.UserRaces.Reverse();
+
+                 if (Model.UserRaces.Count == 0 && Model.Posts.Count == 0)
+                 {
+                    <h2>:/ Sorry, nothing to share at the moment.</h2>
+                 }
+                 else
+                 {
+                    @Html.Partial("_NewPost", Model)
+                     foreach (var item in Model.UserRaces)
+                     {
+                         string url = null;
+                         var logins = item.ApplicationUser.Logins.ToList();
+                         string providerKey = null;
+                         foreach (var loginItem in logins)
+                         {
+                             if (loginItem.LoginProvider.Equals("Facebook"))
+                             {
+                                 providerKey = loginItem.ProviderKey;
+                             }
+                         }
+                         if (!String.IsNullOrEmpty(providerKey))
+                         {
+                             url = "https://graph.facebook.com/" + providerKey + "/picture?type=large";
+
+                         }
+                         else
+                         {
+                             url = "../Assets/cow.jpg";
+                         }
+                         if (item.ApplicationUser.Profile.IsVisible.Value)
+                         {
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="feedBlock">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                        <img src="@url" height="60" width="60" class="img-circle " />
+                                                    </div>
+                                                    <div class="col-sm-10 title-group-feed">
+                                                        <h4 class="feedName">@item.ApplicationUser.Profile.FirstName @item.ApplicationUser.Profile.LastName</h4>
+
+                                                        <p><small>@item.Race.Date.ToString("D")</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <br />
+                                                <p class="feedText_small">Ran the @item.Race.RaceName</p>
+                                                <hr />
+                                                <p class="feedText_small" style="font-style:italic">"@item.HighLights"</p>
+                                                <hr />
+                                                @Ajax.ActionLink("Like", "Like", "Home", new { id = item.UserRaceId }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = @item.UserRaceId.ToString() })
+                                                @Html.Partial("_Like", item)
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                         }
+                     }
+                 }
+                }
+            </div>
+        </div>
+        <div class="hidden-sm hidden-md hidden-lg row">
+            <div class="col-xs-10 col-xs-offset-1 manager_sm main">
+                @{ Model.UserRaces.Reverse();
+
+                 if (Model.UserRaces.Count == 0 && Model.Posts.Count == 0)
+                 {
+                    <h2>:/ Sorry, nothing to share at the moment.</h2>
+                 }
+                 else
+                 {
+                    @Html.Partial("_NewPost", Model)
+                     foreach (var item in Model.UserRaces)
+                     {
+                         string url = null;
+                         var logins = item.ApplicationUser.Logins.ToList();
+                         string providerKey = null;
+                         foreach (var loginItem in logins)
+                         {
+                             if (loginItem.LoginProvider.Equals("Facebook"))
+                             {
+                                 providerKey = loginItem.ProviderKey;
+                             }
+                         }
+                         if (!String.IsNullOrEmpty(providerKey))
+                         {
+                             url = "https://graph.facebook.com/" + providerKey + "/picture?type=large";
+
+                         }
+                         else
+                         {
+                             url = "../Assets/cow.jpg";
+                         }
+                         if (item.ApplicationUser.Profile.IsVisible.Value)
+                         {
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="feedBlock">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <img src="@url" height="60" width="60" class="img-circle " />
+                                                    </div>
+                                                    <div class="col-xs-10 title-group-feed-small">
+                                                        <h4 class="feedName">@item.ApplicationUser.Profile.FirstName @item.ApplicationUser.Profile.LastName</h4>
+
+                                                        <p><small>@item.Race.Date.ToString("D")</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <br />
+                                                <p class="feedText_small">Ran the @item.Race.RaceName</p>
+                                                <hr />
+                                                <p class="feedText_small" style="font-style:italic">"@item.HighLights"</p>
+                                                <hr />
+                                                @Ajax.ActionLink("Like", "Like", "Home", new { id = item.UserRaceId }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = @item.UserRaceId.ToString() })
+                                                @Html.Partial("_Like", item)
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                         }
+                     }
+                 }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        //function postSuccess() {
+        //    $("#form0").clearForm();
+        //}
+        function tinyToText() {
+
+            ed = tinyMCE.getInstanceById('yourId');
+
+            if (ed) {
+                $("#yourId").val(ed.getContent());
+            }
+        }
+        tinymce.init({
+            selector: "textarea",
+            plugins: "link"      })
+    </script>
+}
+
+

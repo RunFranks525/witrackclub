@@ -1,0 +1,5 @@
+﻿@model WisconsinTrackClubWebsite.Models.Race
+
+
+@Html.ActionLink("Register for this event", "GoToRegistration", "Home", new { raceId = @Model.Id }, new { @class = "btn btn-danger" })
+

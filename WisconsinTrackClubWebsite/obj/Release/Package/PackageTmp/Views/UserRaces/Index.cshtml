@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WisconsinTrackClubWebsite.Models.Race>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="col-xs-12 col-md-8 col-md-push-2 information">
+        <h2>Add a Race</h2>
+        <h4>By selecting a race below, you can share with the rest of the WTC community.</h4>
+        @{
+            String raceBeginString = "9/4/2015";
+            DateTime raceBeginDate = Convert.ToDateTime(raceBeginString);
+
+            if (System.DateTime.Now > raceBeginDate)
+            {
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RaceName)
+                        </th>
+                        <th class="hidden-xs">
+                            @Html.DisplayNameFor(model => model.Location)
+                        </th>
+                        <th class="hidden-xs">
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.Date < System.DateTime.Now)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RaceName)
+                                </td>
+                                <td class="hidden-xs">
+                                    @Html.DisplayFor(modelItem => item.Location)
+                                </td>
+                                <td class="hidden-xs">
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Add", "Add", new { id = item.RaceId })
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+
+
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-danger">
+                    <p><strong>Sorry!</strong> No events have occured yet. The add a race feature will be made available as soon as events are completed.</p>
+                </div>
+            }
+         }
+
+
+        </div>
+    </div>
+
+
+
