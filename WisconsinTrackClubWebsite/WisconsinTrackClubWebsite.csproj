@@ -581,6 +581,7 @@
     <Content Include="Assets\2016STS1.pdf" />
     <Content Include="Assets\2016STS2.pdf" />
     <Content Include="Assets\2016STS3.pdf" />
+    <Content Include="Assets\2016STS4.pdf" />
     <None Include="Properties\PublishProfiles\publishProfileA.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\wisconsintrackclub %289%29.pubxml" />
